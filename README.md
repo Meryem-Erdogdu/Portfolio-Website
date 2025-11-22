@@ -29,7 +29,6 @@ A modern, responsive portfolio website showcasing professional experience, proje
 
 - Node.js 18 or higher
 - npm or yarn package manager
-- Git for version control
 
 ## 🏗 Installation & Setup
 
@@ -46,20 +45,14 @@ A modern, responsive portfolio website showcasing professional experience, proje
    yarn install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    
    Navigate to `http://localhost:5000`
 
@@ -98,86 +91,6 @@ A modern, responsive portfolio website showcasing professional experience, proje
 ├── vite.config.ts                     # Vite configuration
 └── package.json                       # Dependencies
 ```
-
-## 🎨 Customization
-
-### Colors
-
-The website uses a custom dark theme with CSS variables. Modify colors in `client/index.css`:
-
-```css
-:root {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --primary: 210 40% 98%;
-  /* ... more color variables */
-}
-```
-
-### Content
-
-Update portfolio content in the respective section components:
-
-- **Experience**: `client/src/components/sections/ExperienceSection.tsx`
-- **Projects**: `client/src/components/sections/ProjectsSection.tsx`
-- **Skills**: `client/src/components/sections/SkillsSection.tsx`
-- **Certificates**: `client/src/components/sections/CertificatesSection.tsx`
-
-### Animations
-
-Mouse-tracking gradient effect can be adjusted in `client/src/App.tsx`. Tailwind transitions are used throughout components for smooth interactions.
-
-## 🚀 Deployment
-
-The site is configured for automatic deployment to GitHub Pages:
-
-1. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to GitHub Pages**
-   
-   Push to the main branch - GitHub Actions will automatically build and deploy
-
-3. **Manual deployment**
-   ```bash
-   npm run deploy
-   ```
-
-## 📊 Performance
-
-- **Build Size**: Optimized with Vite code splitting
-- **Load Time**: Fast initial load with lazy-loaded components
-- **Responsive**: Mobile-first approach with optimized breakpoints
-- **Type Safety**: Full TypeScript coverage prevents runtime errors
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server with HMR
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run check` - TypeScript type checking
-
-### Custom Hooks
-
-- `use-mobile` - Responsive breakpoint detection for mobile/desktop UI adaptation
-
-### Path Aliases
-
-- `@/` - Client source directory
-- `@shared/` - Shared code between client and server
-- `@assets/` - Image and static asset imports
-
-## 🔮 Future Enhancements
-
-- Database integration with Neon Postgres (dependencies already installed)
-- Content Management System for easier updates
-- Blog functionality with markdown support
-- Contact form with backend integration
-- Analytics integration
 
 ## 🙏 Acknowledgments
 
