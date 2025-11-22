@@ -1,128 +1,197 @@
-# Portfolio Website - Meryem Erdoğdu
+# Meryem Erdoğdu - Portfolio Website
 
-## Overview
+A modern, responsive portfolio website showcasing professional experience, projects, skills, and achievements of an AI/ML Software Developer.
 
-This is a personal portfolio website for Meryem Erdoğdu, an AI/ML Software Developer. The application showcases professional experience, projects, skills, certificates, and achievements. It is built as a static single-page application with a modern, responsive design and is deployed to GitHub Pages.
+## ✨ Features
 
-## User Preferences
+- **Modern Design**: Clean, professional interface with smooth animations and interactive elements
+- **Mouse-Tracking Gradient**: Dynamic visual effects that follow cursor movement
+- **Responsive Layout**: Seamless experience across desktop, tablet, and mobile devices
+- **Single Page Application**: Fast navigation with client-side routing
+- **Dark Mode**: Elegant dark theme optimized for readability
+- **Accessible**: Built with accessibility best practices and semantic HTML
+- **Type-Safe**: Full TypeScript implementation for reliability
+- **Performance Optimized**: Fast load times with optimized assets
 
-Preferred communication style: Simple, everyday language.
+## 🛠 Tech Stack
 
-## System Architecture
+- **Framework**: React 18 with TypeScript for type-safe development
+- **Build Tool**: Vite for lightning-fast HMR and optimized builds
+- **Styling**: Tailwind CSS with custom theming and shadcn/ui components
+- **Routing**: Wouter for lightweight client-side navigation
+- **State Management**: TanStack Query for async state handling
+- **UI Components**: shadcn/ui (New York style) built on Radix UI primitives
+- **Icons**: Lucide React for consistent, beautiful icons
+- **Validation**: Zod for TypeScript-first schema validation
+- **Forms**: React Hook Form for efficient form handling
 
-### Frontend Architecture
+## 📋 Prerequisites
 
-**Framework & Build System**
-- **React 18** with TypeScript for type-safe component development
-- **Vite** as the build tool and development server for fast Hot Module Replacement (HMR)
-- **Wouter** for lightweight client-side routing (single-page application pattern)
-- **TanStack Query** for state management and data fetching capabilities
+- Node.js 18 or higher
+- npm or yarn package manager
+- Git for version control
 
-**Styling Approach**
-- **Tailwind CSS** for utility-first styling with custom configuration
-- **shadcn/ui** component library (New York style preset) for consistent, accessible UI components
-- **CSS Variables** for theming with dark mode as the default
-- Custom color palette defined in `index.css` with support for dynamic theme switching
-- Radix UI primitives for accessible, unstyled component foundations
+## 🏗 Installation & Setup
 
-**Component Structure**
-- Organized into feature-based sections: `AboutSection`, `ExperienceSection`, `ProjectsSection`, `SkillsSection`, `CertificatesSection`, `InterestsSection`, `WritingSection`
-- Reusable card components: `ExperienceCard`, `ProjectCard`, `WritingCard`
-- Shared UI components from shadcn/ui in `components/ui/`
-- Navigation component with scroll-based active section highlighting
-- Mouse-tracking gradient effect for visual interactivity
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/portfolio-website
+   cd portfolio-website
+   ```
 
-**Responsive Design**
-- Mobile-first approach with breakpoints for tablet and desktop
-- Sticky navigation on desktop, mobile-optimized navigation on smaller screens
-- Custom hook (`use-mobile`) for detecting device type and adapting UI
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-### Backend Architecture
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
 
-**Server Setup**
-- **Express.js** server with TypeScript for development environment
-- Minimal API surface - primarily serves static files
-- Vite middleware integration for development with HMR
-- No database or authentication required (static portfolio site)
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-**Development vs Production**
-- Development: Vite dev server with middleware mode
-- Production: Static files built and served from `dist/public`
-- GitHub Pages deployment via GitHub Actions workflow
+5. **Open your browser**
+   
+   Navigate to `http://localhost:5000`
 
-### Build & Deployment
+## 📁 Project Structure
 
-**Build Process**
-1. Frontend: `vite build` compiles React/TypeScript to optimized static assets
-2. Backend: `esbuild` bundles server code (for potential server deployment)
-3. Output: Static files in `dist/public` directory
+```
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── sections/
+│   │   │   │   ├── AboutSection.tsx
+│   │   │   │   ├── ExperienceSection.tsx
+│   │   │   │   ├── ProjectsSection.tsx
+│   │   │   │   ├── SkillsSection.tsx
+│   │   │   │   ├── CertificatesSection.tsx
+│   │   │   │   ├── InterestsSection.tsx
+│   │   │   │   └── WritingSection.tsx
+│   │   │   ├── ui/                    # shadcn/ui components
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── ExperienceCard.tsx
+│   │   │   ├── ProjectCard.tsx
+│   │   │   └── WritingCard.tsx
+│   │   ├── hooks/
+│   │   │   └── use-mobile.tsx
+│   │   ├── lib/
+│   │   │   └── utils.ts
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   └── index.css                      # Global styles & theme
+├── server/
+│   └── index.ts                       # Express server
+├── attached_assets/                   # Images and static files
+├── public/                            # Public static assets
+├── dist/                              # Build output
+├── tailwind.config.ts                 # Tailwind configuration
+├── vite.config.ts                     # Vite configuration
+└── package.json                       # Dependencies
+```
 
-**Deployment Strategy**
-- Automated deployment to GitHub Pages via GitHub Actions
-- SPA routing handled with `404.html` redirect script for client-side routing
-- Asset paths configured for GitHub Pages subdirectory structure
-- Environment variables kept in `.env` (excluded from version control)
+## 🎨 Customization
 
-**Development Workflow**
-- Hot Module Replacement for instant feedback during development
-- TypeScript strict mode for type safety
-- ESLint and Prettier configuration (implied by shadcn/ui setup)
+### Colors
 
-### Data Management
+The website uses a custom dark theme with CSS variables. Modify colors in `client/index.css`:
 
-**Static Content**
-- All portfolio content (experiences, projects, skills, certificates) is hardcoded in component files
-- Images stored in `attached_assets` directory and imported as modules
-- No content management system or database required
-- Future consideration: Could migrate to a headless CMS for easier content updates
+```css
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  /* ... more color variables */
+}
+```
 
-**Asset Handling**
-- Vite handles asset optimization and hashing
-- Images imported as ES modules with proper type definitions
-- Favicon and metadata in `index.html` for SEO
+### Content
 
-## External Dependencies
+Update portfolio content in the respective section components:
 
-### Third-Party Libraries
+- **Experience**: `client/src/components/sections/ExperienceSection.tsx`
+- **Projects**: `client/src/components/sections/ProjectsSection.tsx`
+- **Skills**: `client/src/components/sections/SkillsSection.tsx`
+- **Certificates**: `client/src/components/sections/CertificatesSection.tsx`
 
-**UI Components & Styling**
-- `@radix-ui/*` - Accessible component primitives (accordion, dialog, dropdown, tooltip, etc.)
-- `tailwindcss` & `autoprefixer` - Utility-first CSS framework
-- `class-variance-authority` & `clsx` - Dynamic className composition
-- `lucide-react` - Icon library
+### Animations
 
-**State Management & Data Fetching**
-- `@tanstack/react-query` - Async state management (prepared for future API integration)
-- `wouter` - Lightweight routing library
+Mouse-tracking gradient effect can be adjusted in `client/src/App.tsx`. Tailwind transitions are used throughout components for smooth interactions.
 
-**Form Handling**
-- `react-hook-form` - Form state management
-- `@hookform/resolvers` - Schema validation integration
-- `zod` - TypeScript-first schema validation
+## 🚀 Deployment
 
-**Development Tools**
-- `@replit/vite-plugin-*` - Replit-specific development plugins (cartographer, error modal, dev banner)
-- `tsx` - TypeScript execution for development server
-- `esbuild` - Fast bundler for server code
-- `cross-env` - Cross-platform environment variable setting
+The site is configured for automatic deployment to GitHub Pages:
 
-### Potential Database Integration
+1. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-**Database Schema Preparation**
-- `drizzle-orm` & `drizzle-zod` - ORM and schema validation (currently unused)
-- `@neondatabase/serverless` - Neon Postgres serverless driver
-- `connect-pg-simple` - PostgreSQL session store for Express
+2. **Deploy to GitHub Pages**
+   
+   Push to the main branch - GitHub Actions will automatically build and deploy
 
-**Note**: Database dependencies are installed but not actively used. The current implementation is fully static. These dependencies suggest future plans for dynamic content or user authentication features.
+3. **Manual deployment**
+   ```bash
+   npm run deploy
+   ```
 
-### Development Environment
+## 📊 Performance
 
-**Type Definitions**
-- `@types/node` - Node.js type definitions
-- TypeScript strict mode enabled
-- Path aliases configured: `@/` for client source, `@shared/` for shared code, `@assets/` for images
+- **Build Size**: Optimized with Vite code splitting
+- **Load Time**: Fast initial load with lazy-loaded components
+- **Responsive**: Mobile-first approach with optimized breakpoints
+- **Type Safety**: Full TypeScript coverage prevents runtime errors
 
-**Build Configuration**
-- Vite config with React plugin and custom aliases
-- PostCSS with Tailwind and Autoprefixer
-- Module resolution set to "bundler" for modern import handling
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server with HMR
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run check` - TypeScript type checking
+
+### Custom Hooks
+
+- `use-mobile` - Responsive breakpoint detection for mobile/desktop UI adaptation
+
+### Path Aliases
+
+- `@/` - Client source directory
+- `@shared/` - Shared code between client and server
+- `@assets/` - Image and static asset imports
+
+## 🔮 Future Enhancements
+
+- Database integration with Neon Postgres (dependencies already installed)
+- Content Management System for easier updates
+- Blog functionality with markdown support
+- Contact form with backend integration
+- Analytics integration
+
+## 🙏 Acknowledgments
+
+- Built with [React](https://react.dev/) and [Vite](https://vitejs.dev/)
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Lucide React](https://lucide.dev/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Form handling with [React Hook Form](https://react-hook-form.com/)
+- Validation with [Zod](https://zod.dev/)
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+Built with ❤️ by Meryem Erdoğdu
