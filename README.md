@@ -1,4 +1,4 @@
-# Meryem Erdoğdu - Portfolio Website
+# Meryem Erdogdu - Portfolio Website
 
 A modern, responsive portfolio website showcasing professional experience, projects, skills, and achievements of an AI/ML Software Developer.
 
