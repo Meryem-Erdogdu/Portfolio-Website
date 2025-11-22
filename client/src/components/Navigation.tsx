@@ -24,10 +24,10 @@ export default function Navigation({ activeSection }: NavigationProps) {
 
   const sections = [
     { id: 'about', label: 'About', mobileLabel: 'About', number: '01' },
-    { id: 'experience', label: 'Professional Experience', mobileLabel: 'Experience', number: '02' },
-    { id: 'skills', label: 'Technical Skills', mobileLabel: 'Skills', number: '03' },
+    { id: 'experience', label: 'Professıonal Experience', mobileLabel: 'Experience', number: '02' },
+    { id: 'skills', label: 'Technical Skılls', mobileLabel: 'Skills', number: '03' },
     { id: 'projects', label: 'Featured Projects', mobileLabel: 'Projects', number: '04' },
-    { id: 'certificates', label: 'Certificates & Achievements', mobileLabel: 'Certificates', number: '05' },
+    { id: 'certificates', label: 'Certıfıcates & Achıevements', mobileLabel: 'Certificates', number: '05' },
     { id: 'interests', label: 'Current Interests', mobileLabel: 'Interests', number: '06' },
     { id: 'achievements', label: 'Professional Blog', mobileLabel: 'Blog', number: '07' },
   ];
